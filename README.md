@@ -1,5 +1,6 @@
 [![Build Status](https://drone.kghf.io/api/badges/larskghf/dockerhub-readme-updater/status.svg)](https://drone.kghf.io/larskghf/dockerhub-readme-updater)
 [![Docker Pulls](https://img.shields.io/docker/pulls/kghf/dockerhub-readme-updater)](https://hub.docker.com/r/kghf/dockerhub-readme-updater)
+[![Docker Image Size (tag)](https://img.shields.io/docker/image-size/kghf/dockerhub-readme-updater/latest)](https://hub.docker.com/r/kghf/dockerhub-readme-updater)
 ## DockerHub Readme Updater
 
 Docker container to automatically update readme in docker hub
