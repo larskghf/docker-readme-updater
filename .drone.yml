@@ -1,0 +1,49 @@
+kind: pipeline
+type: docker
+name: branch
+
+steps:
+  - name: getTimestamp
+    image: debian:buster-slim
+    commands:
+      - echo -n "$(date +%Y-%m-%d).${DRONE_COMMIT_SHA:0:8},latest" > .tags
+  - name: dockerBuild
+    image: plugins/docker
+    settings:
+      repo: kghf/dockerhub-readme-updater
+      dry_run: true
+
+trigger:
+  branch:
+    - feature/*
+
+---
+kind: pipeline
+type: docker
+name: buildPush
+
+steps:
+  - name: getTimestamp
+    image: debian:buster-slim
+    commands:
+      - echo -n "$(date +%Y-%m-%d).${DRONE_COMMIT_SHA:0:8},latest" > .tags
+  - name: dockerBuildPush
+    image: plugins/docker
+    settings:
+      repo: kghf/dockerhub-readme-updater
+      username: larskghf
+      password:
+        from_secret: docker_password
+  - name: updateDockerReadme
+    image: kghf/dockerhub-readme-updater:latest
+    environment:
+      DOCKER_REPO:
+        from_secret: docker_repo
+      DOCKER_USERNAME:
+        from_secret: docker_username
+      DOCKER_PASSWORD:
+        from_secret: docker_password
+
+trigger:
+  branch:
+    - master
