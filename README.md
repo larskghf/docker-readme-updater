@@ -19,5 +19,5 @@ docker run \
     -e DOCKER_USERNAME=foo \
     -e DOCKER_PASSWORD=bar \
     -v /path/to/your/README.md:/README.md \
-kghf/dockerhub-readme-updater
+kghf/dockerhub-readme-updater:latest
 ```
