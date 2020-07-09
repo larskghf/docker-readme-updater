@@ -12,7 +12,7 @@ GitHub Project: https://github.com/larskghf/dockerhub-readme-updater
 DockerHub: https://hub.docker.com/repository/docker/kghf/dockerhub-readme-updater
 
 ---
-Quick Start:
+#### Quick Start:
 ```bash
 docker run \
     -e DOCKER_REPO=user/repo \
@@ -21,3 +21,15 @@ docker run \
     -v /path/to/your/README.md:/README.md \
 kghf/dockerhub-readme-updater:latest
 ```
+
+#### Run with env.list:
+
+1) Copy env sample to env.list:  ```cp env.list.sample env.list```
+2) Edit env.list:  ```vi env.list```
+3) Run docker container: 
+    ```bash
+    docker run \
+        --env-file env.list \
+        -v /path/to/your/README.md:/README.md \
+    kghf/dockerhub-readme-updater:latest
+    ```
