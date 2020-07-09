@@ -3,7 +3,7 @@
 [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/kghf/dockerhub-readme-updater/latest)](https://hub.docker.com/r/kghf/dockerhub-readme-updater)
 ## DockerHub Readme Updater
 
-Docker container to automatically update readme in docker hub
+Docker image to automatically update readme in docker hub
 
 ---
 
@@ -24,9 +24,9 @@ kghf/dockerhub-readme-updater:latest
 
 #### Run with env.list:
 
-1) Copy env sample to env.list:  ```cp env.list.sample env.list```
-2) Edit env.list:  ```vi env.list```
-3) Run docker container: 
+* Copy env sample to env.list:  ```cp env.list.sample env.list```
+* Edit env.list:  ```vi env.list```
+* Run docker container: 
     ```bash
     docker run \
         --env-file env.list \
