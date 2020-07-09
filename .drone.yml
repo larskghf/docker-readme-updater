@@ -38,7 +38,7 @@ steps:
     image: kghf/dockerhub-readme-updater:latest
     environment:
       DOCKER_REPO: kghf/dockerhub-readme-updater
-      DOCKER_USERNAME: kghf
+      DOCKER_USERNAME: larskghf
       DOCKER_PASSWORD:
         from_secret: docker_password
 
